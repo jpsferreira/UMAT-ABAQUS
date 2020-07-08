@@ -1,0 +1,1 @@
+gfortran -Wextra  -pedantic -o main *.for *.f90
