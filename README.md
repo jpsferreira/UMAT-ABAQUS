@@ -4,4 +4,4 @@ A general framework to develop material models (UMAT) in ABAQUS (Dassault Systè
 
 
 
-![formula](https://render.githubusercontent.com/render/math?math= S = S_{iso} + S_{vol})
+![formula](https://render.githubusercontent.com/render/math?math=S=S_{iso}+S_{vol})
