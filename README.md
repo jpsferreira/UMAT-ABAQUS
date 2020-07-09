@@ -46,7 +46,7 @@ Simple bash scripts are provided for building UMAT-ABAQUS with gfortran. The cod
 
 # Documentation
 
-(under development)
+[jpsferreira.github.io/UMAT-ABAQUS/](https://jpsferreira.github.io/UMAT-ABAQUS/)
 
 ### Authors:
   * João P S Ferreira 
