@@ -48,6 +48,15 @@ Simple bash scripts are provided for building UMAT-ABAQUS with gfortran. The cod
 
 (under development)
 
+### Authors:
+  * João P S Ferreira 
+  
+### Release:
+  * 2020/09/07.
+
+### License:
+  * GNU GPL 3.0.  
+
 
 # References
 
