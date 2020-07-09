@@ -19,7 +19,8 @@ The core routines for the subroutine interface are:
 program main
 
 
-!uexternaldb subroutine - read databases of microstructure information, passes in as common data blocks
+!uexternaldb subroutine - read databases of microstructure 
+!            information, passes in as common data blocks
 
       SUBROUTINE UEXTERNALDB(LOP,LRESTART,TIME,DTIME,KSTEP,KINC)
 
@@ -33,8 +34,7 @@ program main
      4 CELENT,DFGRD0,DFGRD1,NOEL,NPT,LAYER,KSPT,KSTEP,KINC)
 
 
-
-The ```ink``` routines compute the interpolant coefficients, and the ```val``` routines evalute the interpolant at the specified value of each coordinate. The 2D and 3D routines are extensively refactored versions of the original routines from the [NIST Core Math Library](http://www.nist.gov/itl/math/mcsd-software.cfm).  The others are new, and are simply extensions of the same algorithm into the other dimensions.
+```
 
 # Examples
 
