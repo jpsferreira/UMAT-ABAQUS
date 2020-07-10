@@ -1,0 +1,21 @@
+** BOUNDARY CONDITIONS
+*Boundary
+Set-3, ZSYMM
+*Boundary
+Set-1, 1,2,0.0
+*Boundary
+Set-2, 1,1, .6
+Set-2, 2,2, .0
+**Boundary
+**Set-8, 1,2, .2
+**
+** ----------------------------------------------------------------
+** LOADS
+**
+** Name: Load-1   Type: Surface traction
+**Dsload
+**Surf, TRSHR, 2, 1., 0., 0.
+**Cload
+**Set-8, 1, 1.0
+**Set-8, 2, 1.0
+** ----------------------------------------------------------------

@@ -1,0 +1,20 @@
+*Solid Section, elset=main_element, material=UDMG
+*Material, name=UDMG
+*USER MATERIAL,CONSTANTS=14
+<D1>,<C10>,<C01>,<K1>,<K2>,<K1>,<K2>,<KDISP>
+<MBETA>,<MMIN>,<MMAX>,<FBETA>,<FMIN>,<FMAX>
+*DEPVAR
+13,
+1, DET, "DET"
+2, A, "A1.A2"
+3, EK1, "fiber strain E1"
+4, EK2, "fiber strain E2"
+5, etrialM, "equivalent matrix damage strain"
+6, DAMM, "matrix damage"
+7, etrialf1, "equivalent fibers1 damage strain"
+8, DAMf1, "fibers1 damage"
+9, etrialf2, "equivalent fibers2 damage strain"
+10, DAMf2, "fibers2 damage"
+11, DAMMNL, "matrix nonlocal damage"
+12, DAMf1NL, "fibers1 nonlocal damage"
+13, DAMf2NL, "fibers2 nonlocal damage"
