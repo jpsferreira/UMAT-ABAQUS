@@ -37,13 +37,7 @@ program main
 
 This library does not run any specific example. See my other repositories for more models. 
 
-
-├── src
-├── sym
-└── test_in_abaqus
-
-3 directories
-
+3 directories:
 *src - files to build UMAT
 *sym - examples of analytical derivations of the constitutive relations
 *test_in_abaqus - example to test the UMAT file in abaqus environment
