@@ -4,7 +4,7 @@ UMAT-ABAQUS | A general framework to develop material models (UMAT) in ABAQUS (D
 
 This library provides subroutines for 3D implementation of large deformation constitutive behavior using continuum mechanics. The code is written in either fixed-form or modern Fortran. You can use it as a primary subroutine interface for ABAQUS (Dassault Systèmes) as a UMAT or an interface for your finite element code. I have used this code to model many specific material laws of biological soft tissues and cells. Take a look at the reference list. 
 
-You are highly welcome to use these open-resource codes for your non-commercial usage; please cite the below papers.
+This repository is oriented for experienced researchers in biomechanics and continuum mechanics. You are highly welcome to use these open-resource codes for your non-commercial usage; please cite the below papers.
 
 ## Subroutine interface
 
