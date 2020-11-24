@@ -54,9 +54,8 @@ This library does not run any specific example. See my other repositories for mo
 
 Simple bash scripts are provided for building UMAT-ABAQUS with gfortran. The code can also be compiled with the Intel Fortran Compiler (and presumably any other Fortran compiler that supports modern standards).
 
-- ```build.sh``` - compiles the program
+- ```build.sh``` - this script concatenates fortran files into one umat file and compiles the test program. since you can interact with abaqus using only one fortran file, this script also copies the concatenated file to the test_in_abaqus dir
 - ```run_code.sh``` simple input-output test for an arbitrary deformation gradient
-- ```cat_umat_files.sh``` since you can interact with abaqus using only one fortran file, this script concatenates fortran files into one umat file.
 
 # Documentation
 
