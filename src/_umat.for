@@ -175,19 +175,19 @@ C     ISOCHORIC ANISOTROPIC GHO
       K1      = PROPS(4)
       K2      = PROPS(5)
       KDISP   = PROPS(6)
-C     VISCOUS EFFECTS: MAXWELL ELEMTS (MAX:3)
-      VV       = INT(PROPS(7))
-      VSCPROPS = PROPS(8:13)
+C     VISCOUS EFFECTS: MAXWELL ELEMENTS (MAX:3)
+C      VV       = INT(PROPS(7))
+C      VSCPROPS = PROPS(8:13)
 C     NUMERICAL COMPUTATIONS
       NTERM    = 60
 C
 C     STATE VARIABLES
 C
       IF ((TIME(1).EQ.ZERO).AND.(KSTEP.EQ.1)) THEN
-      CALL INITIALIZE(STATEV,VV)
+      CALL INITIALIZE(STATEV)
       ENDIF
 C        READ STATEV
-      CALL SDVREAD(STATEV,VV)
+      CALL SDVREAD(STATEV)
 C      
 C----------------------------------------------------------------------
 C---------------------------- KINEMATICS ------------------------------
@@ -237,7 +237,7 @@ C     'FICTICIOUS' MATERIAL ELASTICITY TENSOR
 C     'FICTICIOUS' SPATIAL ELASTICITY TENSOR
       CALL CSISOMATFIC(CISOMATFIC,CMISOMATFIC,DISTGR,DET,NDI)
 C
-C---- OTHER CONTRIBUTIONS HERE  ----------------------------------------
+C---- FIBERS (ONE FAMILY)   -------------------------------------------
 C
       CALL PK2ANISOMATFIC(PKMATFICANISO,DANISO,CBAR,CBARI4,M0,NDI)
       CALL PUSH2(SANISOMATFIC,PKMATFICANISO,DISTGR,DET,NDI)
@@ -273,10 +273,6 @@ C      PK2 STRESS
       CALL PK2ISO(PKISO,PKFIC,PROJL,DET,NDI)
 C      CAUCHY STRESS
       CALL SIGISO(SISO,SFIC,PROJE,NDI)
-C      ACTIVE CAUCHY STRESS
-C      CALL SIGISO(SACTISO,SNETFICAF,PROJE,NDI)
-C
-C      CALL SPECTRAL(SACTISO,SACTVL,SACTVC)
 C
 C---- VOLUMETRIC + ISOCHORIC ------------------------------------------
 C      PK2 STRESS
@@ -322,25 +318,6 @@ C     ELASTICITY TENSOR
       DDSIGDDE=CVOL+CISO+CJR
 C
 C----------------------------------------------------------------------
-C-------------------------- VISCOUS PART ------------------------------
-C----------------------------------------------------------------------
-C      PULLBACK OF STRESS AND ELASTICITY TENSORS
-C      CALL PULL2(PKVOL,SVOL,DFGRD1INV,DET,NDI)
-C      CALL PULL2(PKISO,SISO,DFGRD1INV,DET,NDI)
-C      CALL PULL4(CMVOL,CVOL,DFGRD1INV,DET,NDI)
-C      CALL PULL4(CMISO,CISO,DFGRD1INV,DET,NDI)
-C      VISCOUS DAMPING
-      CALL VISCO(PK2,DDPKDDE,VV,PKVOL,PKISO,CMVOL,CMISO,DTIME,
-     1                                        VSCPROPS,STATEV,NDI)
-C
-C      PUSH FORWARD OF STRESS AND ELASTICITY TENSOR
-      CALL PUSH2(SIGMA,PK2,DFGRD1,DET,NDI)
-C
-      CALL PUSH4(DDSIGDDE,DDPKDDE,DFGRD1,DET,NDI)
-      DDSIGDDE=DDSIGDDE+CJR
-C      
-C
-C----------------------------------------------------------------------
 C------------------------- INDEX ALLOCATION ---------------------------
 C----------------------------------------------------------------------
 C     VOIGT NOTATION  - FULLY SIMMETRY IMPOSED
@@ -351,7 +328,7 @@ C--------------------------- STATE VARIABLES --------------------------
 C----------------------------------------------------------------------
 C     DO K1 = 1, NTENS
 C      STATEV(1:27) = VISCOUS TENSORS
-       CALL SDVWRITE(DET,STATEV,VV)
+       CALL SDVWRITE(DET,LAMBDA,STATEV)
 C     END DO
 C----------------------------------------------------------------------
       RETURN

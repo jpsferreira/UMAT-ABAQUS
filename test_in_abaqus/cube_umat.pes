@@ -59,14 +59,12 @@ Surf, S6
 ** ----------------------------------------------------------------
 *Solid Section, elset=main_element, material=UD
 *Material, name=UD
-*User Material, constants=8
-1000.0,1.0,0.0,0.0,0.2,0.0,
+*User Material, constants=6
+1000.0,1.0,0.1,0.1,0.2,0.1
 *DEPVAR
-13,
-10, DET, "DET"
-11, A, "A1.A2"
-12, EK1, "fiber strain E1"
-13, EK2, "fiber strain E2"
+2,
+1, DET, "DET"
+2, L1, "fiber stretch"
 ** ----------------------------------------------------------------
 **     UDMG - user defined with damage
 ** ----------------------------------------------------------------

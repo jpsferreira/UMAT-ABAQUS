@@ -1,11 +1,8 @@
 *Solid Section, elset=main_element, material=UD
 *Material, name=UD
-*User Material, constants=8
-<KBULK>,<C10>,<C01>,<K1>,<K2>,<KDISP>,<VV>,<TAU1>,
-<TETA1>,<TAU2>,<TETA2>,<TAU3>,<TETA3>
+*User Material, constants=6
+<KBULK>,<C10>,<C01>,<K1>,<K2>,<KDISP>
 *DEPVAR
-13,
-10, DET, "DET"
-11, A, "A1.A2"
-12, EK1, "fiber strain E1"
-13, EK2, "fiber strain E2"
+2,
+1, DET, "DET"
+2, L1, "fiber stretch"
