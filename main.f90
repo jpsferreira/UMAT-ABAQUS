@@ -57,22 +57,22 @@ PROPS(5)=0.1d0
 !kappa
 PROPS(6)=0.1d0
 !
-!viscous parameters - maxwell
-! v - number of dashpots
-PROPS(17)=0
-!tau1 %
-PROPS(18)=2.0d0
-!teta1
-PROPS(19)=0.835d0
-!tau2 %
-PROPS(20)=1.2d0
-!teta2
-PROPS(21)=7.0d0
-!tau3 %
-PROPS(22)=12.d0
-!teta3
-PROPS(23)=2.0d0
-!
+! !viscous parameters - maxwell
+! ! v - number of dashpots
+! PROPS(17)=0
+! !tau1 %
+! PROPS(18)=2.0d0
+! !teta1
+! PROPS(19)=0.835d0
+! !tau2 %
+! PROPS(20)=1.2d0
+! !teta2
+! PROPS(21)=7.0d0
+! !tau3 %
+! PROPS(22)=12.d0
+! !teta3
+! PROPS(23)=2.0d0
+! !
 STATEV=0.D0
 !
 erf=0.d0
@@ -91,7 +91,6 @@ RHO=0.D0
 !
 !################################################################################################!
 !!     TENSILE MONOTONIC LOAD TEST
-
  DFGRD1(1,1)=  1.2D0
  DFGRD1(1,2)=  0.0D0
  DFGRD1(1,3)=  0.0d0

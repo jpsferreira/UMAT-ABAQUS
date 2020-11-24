@@ -46,7 +46,7 @@ This library does not run any specific example. See my other repositories for mo
 3 directories
 ```
 
-* src - files to build UMAT
+* src - files to build your UMAT file. 
 * sym - examples of analytical derivations of the constitutive relations
 * test_in_abaqus - example to test the UMAT file in abaqus environment
 

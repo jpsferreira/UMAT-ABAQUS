@@ -1,0 +1,10 @@
+*.out
+*.nb
+*.prt
+*.com
+*.msg
+*.odb
+*.pmg
+*.sim
+*.dat
+*.par

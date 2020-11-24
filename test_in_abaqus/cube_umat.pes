@@ -57,24 +57,16 @@ Surf, S6
 ** ----------------------------------------------------------------
 **                PARAMETERS: MATERIAL LOCAL ORIENTATIONS
 ** ----------------------------------------------------------------
-*parameter
-density=1.0e-4
-**ISOTROPIC - NEO HOOKE AND MOONEY RIVLIN
-C10=1.0
-C01=0.1
-**VOLUMETRIC
-KBULK=1000.0
-**ANISOTROPIC
-K1=0.1
-K2=0.2
-KDISP=0.1
-** ----------------------------------------------------------------
-**                         SECTIONS
-** ----------------------------------------------------------------
-** ----------------------------------------------------------------
-**     UD - user defined
-** ----------------------------------------------------------------
-*INCLUDE, file=sec_ud.inp
+*Solid Section, elset=main_element, material=UD
+*Material, name=UD
+*User Material, constants=8
+1000.0,1.0,0.0,0.0,0.2,0.0,
+*DEPVAR
+13,
+10, DET, "DET"
+11, A, "A1.A2"
+12, EK1, "fiber strain E1"
+13, EK2, "fiber strain E2"
 ** ----------------------------------------------------------------
 **     UDMG - user defined with damage
 ** ----------------------------------------------------------------
@@ -95,7 +87,43 @@ KDISP=0.1
 ** ----------------------------------------------------------------
 **     UNIAXIAL BCS
 ** ----------------------------------------------------------------
-*INCLUDE, file=bcs_uni.inp
+** ----------------------------------------------------------------
+**     UNIAXIAL BCS
+** ----------------------------------------------------------------
+**
+*Amplitude,name=amp
+0., 0., 1., 0.8, 2., 0., 3., 0.9
+4., 0., 5., 1., 6., 0.
+** Type: Displacement/Rotation
+** Name: BC-1 Type: Symmetry/Antisymmetry/Encastre
+*Boundary
+Set-3, ZSYMM
+** Name: BC-2 Type: Symmetry/Antisymmetry/Encastre
+*Boundary
+Set-4, XSYMM
+** Name: BC-3 Type: Symmetry/Antisymmetry/Encastre
+*Boundary
+Set-1, YSYMM
+**Boundary
+*Boundary, type=displacement
+Set-2, 2,2, 0.6
+**Boundary, type=displacement,amplitude=amp
+**Set-2, 2,2, 0.15
+**
+** ----------------------------------------------------------------
+** LOADS
+**
+** Name: Load-1   Type: Surface traction
+**Dsload
+**Dsload, amplitude=amp
+**Surf-6, TRVEC, 5.3, 0., 1., 0.
+**Cload, amplitude=amp
+**Cload
+**Set-2, 2, 8.0
+**
+**
+**
+** ----------------------------------------------------------------
 ** ----------------------------------------------------------------
 **     BIAXIAL BCS
 ** ----------------------------------------------------------------

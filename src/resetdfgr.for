@@ -17,4 +17,3 @@ C
         DFGRD(3,3)=  ONE
 
       END SUBROUTINE RESETDFGRD
-      
