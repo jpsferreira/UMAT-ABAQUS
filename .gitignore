@@ -8,3 +8,6 @@
 *.sim
 *.dat
 *.par
+*.pes
+*.sta
+*.rpy
