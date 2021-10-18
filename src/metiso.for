@@ -17,8 +17,6 @@ C
       CISOAUX1=ZERO
       CISOAUX=ZERO
       CALL CONTRACTION44(CISOAUX1,PL,CMFIC,NDI)
-C      
-C  transpose of lagrangian projection tensor     
       DO I1=1,NDI
         DO J1=1,NDI
            DO K1=1,NDI
@@ -34,9 +32,8 @@ C
       TRFIC=ZERO
       AUX=DET**(-TWO/THREE)
       AUX1=AUX**TWO
-      DO I1=1,NDI
-         TRFIC=TRFIC+AUX*PKFIC(I1,I1)*C(I1,I1)
-      END DO
+      CALL CONTRACTION22(TRFIC,AUX*PKFIC,C,NDI)
+
 C
       DO I1=1,NDI
         DO J1=1,NDI
