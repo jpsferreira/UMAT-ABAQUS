@@ -264,7 +264,7 @@ C----------------------------------------------------------------------
 C
 C---- VOLUMETRIC ------------------------------------------------------
 C      PK2 STRESS
-      CALL PK2VOL(PKVOL,PV,C,NDI)
+      CALL PK2VOL(PKVOL,PV,C,DET,NDI)
 C      CAUCHY STRESS
       CALL SIGVOL(SVOL,PV,UNIT2,NDI)
 C
