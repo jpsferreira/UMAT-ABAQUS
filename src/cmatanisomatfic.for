@@ -28,7 +28,8 @@ C
           DO L=1,NDI
           CINV4(I,J,K,L)=D2UDI4*MM0(I,J,K,L)
           CINV14(I,J,K,L)=D2UDI1DI4*(IMM(I,J,K,L)+MMI(I,J,K,L))
-          CMANISOMATFIC(I,J,K,L)=FOUR*(CINV4(I,J,K,L)+CINV14(I,J,K,L))
+          CMANISOMATFIC(I,J,K,L)=FOUR*(DET**(-FOUR/THREE))*
+      1                 (CINV4(I,J,K,L)+CINV14(I,J,K,L))
           END DO
          END DO
        END DO
