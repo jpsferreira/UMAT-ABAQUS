@@ -36,7 +36,8 @@ C
                      AUX=AUX1*UIJ*UKL+
      1                   AUX2*(UIJ*CKL+CIJ*UKL)+AUX3*CIJ*CKL+
      3                   AUX4*UNIT4(I1,J1,K1,L1)
-                     CMISOMATFIC(I1,J1,K1,L1)=AUX        
+                     CMISOMATFIC(I1,J1,K1,L1)=
+     1                AUX*DET**(-FOUR/THREE)       
               END DO
            END DO
         END DO
